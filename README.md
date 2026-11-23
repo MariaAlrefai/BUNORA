@@ -6,7 +6,7 @@ This project was created as a frontend development and web design portfolio proj
 
 ## Live Demo
 
-[View Live Website](ADD_YOUR_NETLIFY_LINK_HERE)
+[View Live Website]([ADD_YOUR_NETLIFY_LINK_HERE](https://fantastic-syrniki-e4de7e.netlify.app))
 
 ## Features
 
