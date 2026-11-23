@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BUNORA — Premium Burger Experience</title>
+    <meta name="description" content="BUNORA — Premium Burger Experience. Artizan burgerler, çıtır tavuklar ve özel soslar." />
+
+    <!-- Google Fonts: Cairo (Arabic) & Plus Jakarta Sans + Fraunces (Turkish/Display) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- ==================== STICKY NAVIGATION BAR ==================== -->
+    <header class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <!-- Brand Logo -->
+            <a href="#welcome" class="brand-logo" aria-label="BUNORA Home">
+                <span class="brand-emblem" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <path d="M5 13C5 8.58172 9.92487 5 16 5C22.0751 5 27 8.58172 27 13H5Z" fill="#E87932" />
+            <rect x="4" y="15.5" width="24" height="3.5" rx="1.75" fill="#F5F0E8" />
+            <path d="M5 21.5H27V23.5C27 25.433 25.433 27 23.5 27H8.5C6.567 27 5 25.433 5 23.5V21.5Z" fill="#E87932" />
+          </svg>
+        </span>
+                <span class="brand-text-group">
+          <span class="brand-name">BUNORA</span>
+                <span class="brand-tagline" data-i18n="tagline">Premium Burger Deneyimi</span>
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
+                <a href="#welcome" class="nav-link" data-i18n="navWelcome">Ana Sayfa</a>
+                <a href="#menu" class="nav-link" data-i18n="navMenu">Menü</a>
+                <a href="#orders" class="nav-link nav-link-orders">
+                    <span data-i18n="navOrders">Siparişlerim</span>
+                    <span class="nav-orders-badge" id="navOrdersCount" hidden>0</span>
+                </a>
+            </nav>
+
+            <!-- Actions: Language Switcher, Cart Button & Mobile Menu Toggle -->
+            <div class="nav-actions">
+                <div class="lang-switcher" role="group" aria-label="Language Switcher">
+                    <button type="button" class="lang-btn" data-lang="tr" aria-pressed="true">TR</button>
+                    <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">عربي</button>
+                </div>
+
+                <button type="button" class="cart-trigger" id="openCartBtn" aria-label="Open Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-trigger-label" data-i18n="cartLabel">Sepet</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+
+                <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div class="mobile-nav" id="mobileNav" hidden>
+            <a href="#welcome" class="mobile-nav-link" data-i18n="navWelcome">Ana Sayfa</a>
+            <a href="#menu" class="mobile-nav-link" data-i18n="navMenu">Menü</a>
+            <a href="#orders" class="mobile-nav-link" data-i18n="navOrders">Siparişlerim</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==================== WELCOME / LANDING SECTION ==================== -->
+        <section class="hero-section" id="welcome">
+            <div class="hero-glow" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <div class="hero-top-bar">
+                        <span class="hero-pill">
+              <span class="hero-pill-dot"></span>
+                        <span data-i18n="heroBadge">BUNORA • Premium Burger Experience</span>
+                        </span>
+
+                        <!-- Prominent Welcome Language Selector -->
+                        <div class="hero-lang-bar" role="group" aria-label="Welcome Language Selection">
+                            <button type="button" class="hero-lang-btn" data-lang="tr">Türkçe</button>
+                            <button type="button" class="hero-lang-btn" data-lang="ar">العربية</button>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title" data-i18n="heroTitle">
+                        Ateşin Ustalarıyla Gerçek Burger Sanatını Keşfedin
+                    </h1>
+
+                    <p class="hero-description" data-i18n="heroSubtitle">
+                        %100 dinlendirilmiş dana eti, günlük taze pişen artizan brioche ekmeği ve imza soslarımızla hazırlanan benzersiz bir lezzet deneyimi.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#menu" class="btn btn-primary btn-lg" id="getStartedBtn">
+                            <span data-i18n="heroCta">Menüyü Keşfet</span>
+                            <svg class="dir-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+                        </a>
+
+                        <a href="#orders" class="btn btn-outline-light btn-lg" data-i18n="heroSecondaryCta">
+              Siparişlerim
+            </a>
+                    </div>
+
+                    <div class="hero-highlights">
+                        <div class="hero-highlight-item">
+                            <strong data-i18n="highlight1Title">%100 Dinlendirilmiş Et</strong>
+                            <span data-i18n="highlight1Sub">Katkısız & Günlük Taze</span>
+                        </div>
+                        <div class="hero-divider" aria-hidden="true"></div>
+                        <div class="hero-highlight-item">
+                            <strong data-i18n="highlight2Title">Artizan Brioche</strong>
+                            <span data-i18n="highlight2Sub">Her Sabah Fırından</span>
+                        </div>
+                        <div class="hero-divider" aria-hidden="true"></div>
+                        <div class="hero-highlight-item">
+                            <strong data-i18n="highlight3Title">Özel İmza Soslar</strong>
+                            <span data-i18n="highlight3Sub">Şefin Reçetesi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=85" alt="BUNORA Signature Gourmet Burger" class="hero-image" />
+                        <div class="hero-floating-card">
+                            <span class="floating-card-tag" data-i18n="chefChoice">Şefin Seçimi</span>
+                            <strong class="floating-card-title" data-i18n="heroCardName">BUNORA Truffle Royale</strong>
+                            <span class="floating-card-price">365 ₺</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== FOOD MENU SECTION ==================== -->
+        <section class="menu-section" id="menu">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-eyebrow" data-i18n="menuEyebrow">Özenle Hazırlanan Lezzetler</span>
+                        <h2 class="section-title" data-i18n="menuTitle">BUNORA Menüsü</h2>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="search-box">
+                        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+                        <input type="search" id="menuSearchInput" class="search-input" placeholder="Burger, tavuk, patates veya içecek ara..." data-i18n-placeholder="searchPlaceholder" aria-label="Search menu items" />
+                        <button type="button" class="search-clear-btn" id="clearSearchBtn" aria-label="Clear search" hidden>
+              &times;
+            </button>
+                    </div>
+                </div>
+
+                <!-- Category Navigation Pills -->
+                <div class="category-bar" id="categoryBar" role="tablist" aria-label="Food Categories"></div>
+
+                <!-- Active Filter Meta -->
+                <div class="menu-meta-bar">
+                    <p class="menu-results-count" id="menuResultsCount"></p>
+                </div>
+
+                <!-- Product Cards Grid -->
+                <div class="products-grid" id="productsGrid"></div>
+
+                <!-- Empty Search State -->
+                <div class="empty-state" id="menuEmptyState" hidden>
+                    <div class="empty-state-icon" aria-hidden="true">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+                    </div>
+                    <h3 data-i18n="noResultsTitle">Aramanızla eşleşen ürün bulunamadı</h3>
+                    <p data-i18n="noResultsSub">Farklı bir anahtar kelime deneyebilir veya tüm kategorileri görüntüleyebilirsiniz.</p>
+                    <button type="button" class="btn btn-primary" id="resetFiltersBtn" data-i18n="resetFilters">
+            Filtreleri Sıfırla
+          </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PREVIOUS ORDERS SECTION ==================== -->
+        <section class="orders-section" id="orders">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-eyebrow" data-i18n="ordersEyebrow">Yerel Sipariş Geçmişi</span>
+                        <h2 class="section-title" data-i18n="ordersSectionTitle">Siparişlerim</h2>
+                    </div>
+                </div>
+
+                <!-- Saved Orders List -->
+                <div class="orders-list" id="ordersList"></div>
+
+                <!-- Empty Orders State -->
+                <div class="empty-state empty-state-orders" id="ordersEmptyState" hidden>
+                    <div class="empty-state-icon" aria-hidden="true">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+                    </div>
+                    <h3 data-i18n="noOrdersTitle">Henüz kayıtlı bir siparişiniz yok</h3>
+                    <p data-i18n="noOrdersSub">Menüden dilediğiniz lezzetleri sepetinize ekleyerek ilk siparişinizi oluşturabilirsiniz.</p>
+                    <a href="#menu" class="btn btn-primary" data-i18n="browseMenuBtn">Menüye Git</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <span class="brand-emblem" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <path d="M5 13C5 8.58172 9.92487 5 16 5C22.0751 5 27 8.58172 27 13H5Z" fill="#E87932" />
+              <rect x="4" y="15.5" width="24" height="3.5" rx="1.75" fill="#F5F0E8" />
+              <path d="M5 21.5H27V23.5C27 25.433 25.433 27 23.5 27H8.5C6.567 27 5 25.433 5 23.5V21.5Z" fill="#E87932" />
+            </svg>
+          </span>
+                    <span class="brand-name">BUNORA</span>
+                </div>
+                <p class="footer-desc" data-i18n="footerDesc">
+                    Premium Burger Experience — Artizan tarifler, taze malzemeler ve modern gastronomi anlayışı.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#welcome" data-i18n="navWelcome">Ana Sayfa</a>
+                <a href="#menu" data-i18n="navMenu">Menü</a>
+                <a href="#orders" data-i18n="navOrders">Siparişlerim</a>
+            </div>
+
+            <p class="footer-note" data-i18n="footerDemoNote">
+                BUNORA Demonstration Showcase • Tüm siparişler tarayıcınızda yerel olarak saklanır.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== PRODUCT DETAILS MODAL ==================== -->
+    <div class="modal-backdrop" id="productModalBackdrop" hidden>
+        <div class="modal product-modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName">
+            <button type="button" class="modal-close-btn" id="closeProductModalBtn" aria-label="Close modal">
+        &times;
+      </button>
+
+            <div class="product-modal-body">
+                <div class="product-modal-media">
+                    <img src="" alt="" id="modalProductImage" />
+                    <span class="modal-category-badge" id="modalProductCategory"></span>
+                </div>
+
+                <div class="product-modal-details">
+                    <div class="modal-header-info">
+                        <h2 id="modalProductName"></h2>
+                        <p class="modal-product-desc" id="modalProductDesc"></p>
+                        <div class="modal-base-price" id="modalUnitPrice"></div>
+                    </div>
+
+                    <div class="modal-options-scroll">
+                        <!-- Sizes Section -->
+                        <div class="option-group" id="modalSizesGroup" hidden>
+                            <div class="option-group-header">
+                                <h3 data-i18n="selectSize">Boyut Seçimi</h3>
+                                <span class="option-tag" data-i18n="requiredLabel">Seçenek</span>
+                            </div>
+                            <div class="size-options-grid" id="modalSizesList"></div>
+                        </div>
+
+                        <!-- Free Add-ons Section -->
+                        <div class="option-group" id="modalFreeAddonsGroup" hidden>
+                            <div class="option-group-header">
+                                <h3 data-i18n="freeAddons">Ücretsiz Ekstralar</h3>
+                                <span class="option-tag option-tag-free" data-i18n="freeLabel">Ücretsiz</span>
+                            </div>
+                            <div class="addons-list" id="modalFreeAddonsList"></div>
+                        </div>
+
+                        <!-- Paid Add-ons Section -->
+                        <div class="option-group" id="modalPaidAddonsGroup" hidden>
+                            <div class="option-group-header">
+                                <h3 data-i18n="paidAddons">Özel Ekstra Malzemeler</h3>
+                                <span class="option-tag" data-i18n="optionalLabel">İsteğe Bağlı</span>
+                            </div>
+                            <div class="addons-list" id="modalPaidAddonsList"></div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Sticky Footer -->
+                    <div class="product-modal-footer">
+                        <div class="qty-stepper" role="group" aria-label="Quantity selector">
+                            <button type="button" class="qty-btn" id="modalQtyMinus" aria-label="Decrease quantity">−</button>
+                            <span class="qty-value" id="modalQtyValue">1</span>
+                            <button type="button" class="qty-btn" id="modalQtyPlus" aria-label="Increase quantity">+</button>
+                        </div>
+
+                        <button type="button" class="btn btn-primary modal-add-btn" id="modalAddToCartBtn">
+              <span data-i18n="addToCart">Sepete Ekle</span>
+              <span class="modal-btn-price" id="modalTotalBtnPrice">0 ₺</span>
+            </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== SHOPPING CART DRAWER ==================== -->
+    <div class="drawer-backdrop" id="cartBackdrop" hidden>
+        <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+            <div class="cart-drawer-header">
+                <div class="cart-title-wrap">
+                    <h2 id="cartDrawerTitle" data-i18n="yourCart">Sepetiniz</h2>
+                    <span class="cart-header-count" id="cartDrawerCount">0</span>
+                </div>
+                <button type="button" class="modal-close-btn static-close" id="closeCartBtn" aria-label="Close cart">
+          &times;
+        </button>
+            </div>
+
+            <div class="cart-drawer-body" id="cartItemsContainer"></div>
+
+            <div class="cart-empty-state" id="cartEmptyState" hidden>
+                <div class="empty-state-icon" aria-hidden="true">
+                    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+                </div>
+                <h3 data-i18n="emptyCartTitle">Sepetiniz şu an boş</h3>
+                <p data-i18n="emptyCartSub">Lezzetli burgerlerimizi keşfetmek için menüye göz atın.</p>
+            </div>
+
+            <div class="cart-drawer-footer" id="cartDrawerFooter" hidden>
+                <div class="cart-summary-row">
+                    <span data-i18n="totalAmount">Toplam Tutar</span>
+                    <strong class="cart-total-price" id="cartTotalPrice">0 ₺</strong>
+                </div>
+                <button type="button" class="btn btn-primary btn-block" id="proceedCheckoutBtn" data-i18n="checkoutBtn">
+          Siparişi Tamamla
+        </button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- ==================== CHECKOUT & CONFIRMATION MODAL ==================== -->
+    <div class="modal-backdrop" id="checkoutModalBackdrop" hidden>
+        <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+            <button type="button" class="modal-close-btn" id="closeCheckoutModalBtn" aria-label="Close checkout">
+        &times;
+      </button>
+
+            <!-- Step 1: Checkout Form -->
+            <div class="checkout-step" id="checkoutFormStep">
+                <div class="checkout-header">
+                    <span class="section-eyebrow" data-i18n="demoCheckoutBadge">Demo Sipariş Onayı</span>
+                    <h2 id="checkoutModalTitle" data-i18n="checkoutTitle">Teslimat Yöntemi ve Bilgiler</h2>
+                </div>
+
+                <!-- Delivery Method Switch -->
+                <div class="delivery-methods" role="radiogroup" aria-label="Order Method">
+                    <button type="button" class="method-card active" data-method="delivery" aria-checked="true">
+            <span class="method-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </span>
+            <span class="method-text">
+              <strong data-i18n="methodDelivery">Adrese Teslimat</strong>
+              <small data-i18n="methodDeliverySub">Kapınıza kadar sıcak teslimat</small>
+            </span>
+          </button>
+
+                    <button type="button" class="method-card" data-method="pickup" aria-checked="false">
+            <span class="method-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+            </span>
+            <span class="method-text">
+              <strong data-i18n="methodPickup">Restorandan Gel-Al</strong>
+              <small data-i18n="methodPickupSub">Şubemizden hızlı teslim alın</small>
+            </span>
+          </button>
+                </div>
+
+                <!-- Optional Customer Fields (Demo Mode: Not Required) -->
+                <form id="checkoutForm" class="checkout-form" novalidate>
+                    <p class="demo-helper-note" data-i18n="demoFormHint">
+                        Bu bir tanıtım projesidir. Alanları doldurmadan da doğrudan siparişi tamamlayabilirsiniz.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="customerNameInput" data-i18n="fieldCustomerName">Müşteri Adı (İsteğe Bağlı)</label>
+                        <input type="text" id="customerNameInput" class="form-input" placeholder="Örn: Ahmet Yılmaz" data-i18n-placeholder="placeholderName" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerPhoneInput" data-i18n="fieldPhone">Telefon Numarası (İsteğe Bağlı)</label>
+                        <input type="tel" id="customerPhoneInput" class="form-input" placeholder="Örn: +90 555 000 00 00" data-i18n-placeholder="placeholderPhone" />
+                    </div>
+
+                    <div class="form-group" id="deliveryAddressGroup">
+                        <label for="customerAddressInput" data-i18n="fieldAddress">Teslimat Adresi (İsteğe Bağlı)</label>
+                        <textarea id="customerAddressInput" class="form-input form-textarea" rows="2" placeholder="Mahalle, sokak, bina no..." data-i18n-placeholder="placeholderAddress"></textarea>
+                    </div>
+
+                    <div class="checkout-summary-box">
+                        <div class="checkout-summary-row">
+                            <span data-i18n="itemsCountLabel">Ürün Adedi</span>
+                            <strong id="checkoutItemsCount">0</strong>
+                        </div>
+                        <div class="checkout-summary-row total">
+                            <span data-i18n="payableTotal">Ödenecek Toplam</span>
+                            <strong id="checkoutFinalTotal">0 ₺</strong>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-lg" data-i18n="confirmOrderBtn">
+            Siparişi Onayla
+          </button>
+                </form>
+            </div>
+
+            <!-- Step 2: Order Success Screen -->
+            <div class="checkout-step checkout-success" id="checkoutSuccessStep" hidden>
+                <div class="success-icon-circle" aria-hidden="true">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+                </div>
+
+                <span class="success-badge" data-i18n="orderSuccessBadge">Sipariş Alındı</span>
+                <h2 data-i18n="orderSuccessTitle">Siparişiniz Başarıyla Oluşturuldu!</h2>
+                <p class="success-subtitle" data-i18n="orderSuccessMessage">
+                    BUNORA mutfağı siparişinizi hazırlamaya başladı. Sipariş detaylarınız tarayıcınıza kaydedildi.
+                </p>
+
+                <div class="order-receipt-card">
+                    <div class="receipt-row">
+                        <span data-i18n="orderNumberLabel">Sipariş Numarası</span>
+                        <strong class="receipt-order-number" id="confirmedOrderNumber">BUN-20261122-001</strong>
+                    </div>
+                    <div class="receipt-row">
+                        <span data-i18n="deliveryMethodLabel">Teslimat Yöntemi</span>
+                        <strong id="confirmedDeliveryMethod">—</strong>
+                    </div>
+                    <div class="receipt-row">
+                        <span data-i18n="orderDateLabel">Tarih ve Saat</span>
+                        <strong id="confirmedOrderDate">—</strong>
+                    </div>
+                    <div class="receipt-row receipt-total">
+                        <span data-i18n="totalAmount">Toplam Tutar</span>
+                        <strong id="confirmedOrderTotal">0 ₺</strong>
+                    </div>
+                </div>
+
+                <div class="success-actions">
+                    <a href="#orders" class="btn btn-primary" id="viewOrderHistoryBtn" data-i18n="viewPreviousOrdersBtn">
+            Siparişlerimi Görüntüle
+          </a>
+                    <button type="button" class="btn btn-secondary" id="continueShoppingBtn" data-i18n="backToMenuBtn">
+            Menüye Dön
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
